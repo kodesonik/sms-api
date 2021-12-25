@@ -1,0 +1,20 @@
+GET http://localhost:4000/api/message HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0YjA1NjdkNTkwN2VmYjExYjM0YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYzOTAzMjMzNX0.4QOWerdDU4rAlcyufcThgPTyxcN82J0_8DYMaa50VFI
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0M2I0YzM4M2Q0MzgxNmExYjk5YiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjM4Mjg2MzMzfQ.W4AqGXYKHMMA4eIYGw8YY6LUQxV9rQyJkRZl6a6F5w4
+
+###Send SMS authenticated
+POST http://localhost:4000/api/message HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0YjA1NjdkNTkwN2VmYjExYjM0YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYzOTAzMjMzNX0.4QOWerdDU4rAlcyufcThgPTyxcN82J0_8DYMaa50VFI
+content-type: application/json
+
+{
+    "senderName": "SMS Api",
+    "receiverContact": "0022892942601",
+    "content":  "Content de te revoir!"
+}
+
+### Send SMS by api_key
+GET url HTTP/1.1
+http://localhost:4000/api/message?token=&from=&to=&text=
+### confirmation link
+GET http://localhost:4000/api/confirm-message?type=dlr&messageid=MESSAGE_ID&to=6588888888&status=0&statuscode=delivered&errcode=1&network=52099 HTTP/1.1

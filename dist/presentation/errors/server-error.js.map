@@ -1,0 +1,1 @@
+{"version":3,"file":"server-error.js","sourceRoot":"","sources":["../../../src/presentation/errors/server-error.ts"],"names":[],"mappings":";;;AAAA,MAAa,WAAY,SAAQ,KAAK;IACpC;QACE,KAAK,CAAC,gBAAgB,CAAC,CAAA;QACvB,IAAI,CAAC,IAAI,GAAG,aAAa,CAAA;IAC3B,CAAC;CACF;AALD,kCAKC"}

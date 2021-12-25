@@ -1,0 +1,104 @@
+GET http://localhost:4000/api/payement HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0YjA1NjdkNTkwN2VmYjExYjM0YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYzODI5MTQ5MH0.wC1jpEYONLx92knD7b8RrLJZ7__ii4hjIQNd4bKj-hs
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0M2I0YzM4M2Q0MzgxNmExYjk5YiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjM4Mjg2MzMzfQ.W4AqGXYKHMMA4eIYGw8YY6LUQxV9rQyJkRZl6a6F5w4
+
+###
+POST http://localhost:4000/api/payement HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0M2I0YzM4M2Q0MzgxNmExYjk5YiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjM4Mjg2MzMzfQ.W4AqGXYKHMMA4eIYGw8YY6LUQxV9rQyJkRZl6a6F5w4
+content-type: application/json
+
+{
+    "amount": 500,
+    "provider": "Paygate",
+    "method":  "T-money"
+}
+
+###
+GET http://localhost:4000/api/confirm-payement?status=0&&amount=500 HTTP/1.1
+
+
+
+##### CINET PAY
+
+##Signature
+POST https://api.cinetpay.com/v1/?method=getSignatureByPost HTTP/1.1
+content-type: application/json
+
+{
+    "cpm_amount": 5000,
+    "cpm_currency": "XOF",
+    "cpm_site_id": "",
+    "cpm_trans_id": "",
+    "cpm_trans_date": "",
+    "cpm_payement_config": "",
+    "cpm_page_action": "PAYMENT",
+    "cpm_version": "V1",
+    "cpm_language": "en",
+    "cpm_designation": "Forfaite SMS",
+    "cpm_custom": "",
+    "apikey": "",
+    "cel_phone_num":"92942601",
+    "cpm_phone_prefixe": "228"
+}
+
+### Formulaire
+POST https://secure.cinetpay.com HTTP/1.1
+Content-Type: application/json
+
+{
+    "cpm_amount": 5000,
+    "cpm_currency": "XOF",
+    "cpm_site_id": "",
+    "cpm_trans_id": "",
+    "cpm_trans_date": "",
+    "cpm_payement_config": "",
+    "cpm_page_action": "PAYMENT",
+    "cpm_version": "V1",
+    "cpm_language": "en",
+    "cpm_designation": "Forfaite SMS",
+    "cpm_custom": "",
+    "apikey": "",
+    "cel_phone_num":"92942601",
+    "cpm_phone_prefixe": "228",
+    "signature": "",
+    "return_url": "",
+    "cancel_url": "",
+    "notify_url": ""
+}
+
+#### check payement status
+POST https://api.cinetpay.com/v1/?method=checkPayStatus HTTP/1.1
+Content-Type: application/json
+
+{
+    "apikey": "",
+    "cpm_site_id": "",
+    "cpm_trans_id": ""
+}
+ 
+
+#  reponse : {
+#     "transaction": {
+#         "cpm_site_id": "296911",
+#         "signature": "4dfbf5b8f40818abffe754b8a8aa04e4d29af25f",
+#         "cpm_amount": "11",
+#         "cpm_trans_date": "04092017140045",
+#         "cpm_trans_id": "50445985950",
+#         "cpm_custom": "08373459U",
+#         "cpm_currency": "XOF",
+#         "cpm_payid": "MP170904.1401.A91088",
+#         "cpm_payment_date": "2017-09-04",
+#         "cpm_payment_time": "14:01:35",
+#         "cpm_error_message": "SUCCES",
+#         "payment_method": "OM",
+#         "cpm_phone_prefixe": "225",
+#         "cel_phone_num": "79557788",
+#         "cpm_ipn_ack": "Y",
+#         "created_at": "2017-09-04 14:00:54",
+#         "updated_at": "2017-09-04 14:01:06",
+#         "cpm_result": "00",
+#         "cpm_trans_status": "ACCEPTED",
+#         "cpm_designation": "Test",
+#         "buyer_name": ""
+#     }
+# }

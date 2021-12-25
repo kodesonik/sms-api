@@ -1,0 +1,44 @@
+#### Login
+
+POST http://localhost:4000/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "nex.freelance@gmail.com",
+    "password": "abcD2021" 
+}
+
+# {
+#     "email": "aroamadou1@gmail.com",
+#     "password": "azertyui" 
+# }
+
+###logout
+POST http://localhost:4000/api/logout HTTP/1.1
+Authorization: Bearer mongodb+srv://aro:azertyui@cluster0.jqpoh.mongodb.net/sms-api?retryWrites=true&w=majority
+
+### Sign up
+POST http://localhost:4000/api/register HTTP/1.1
+content-type: application/json
+
+{
+    "email": "nex.freelance@gmail.com",
+    "lastname": "Nex",
+    "firstname":  "Freelance", 
+    "password": "abcD2021" 
+}
+
+# {
+#     "email": "aroamadou1@gmail.com",
+#     "lastname": "Aro",
+#     "firstname":  "AMADOU", 
+#     "password": "azertyui" 
+# }
+
+### Confirm email by token
+GET http://localhost:4000/api/validation/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTUyNjRlODQ0Y2U1ZDA0MjBhOGE1MSIsImlhdCI6MTYzODIxMzE5OX0.6mp3l0kg_vVAkkrPP_g0zIJypg8rnS6VgSiva2fkDKg HTTP/1.1
+
+
+### Get profile
+GET  http://localhost:4000/api/profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTg5ZGM4ZGQwM2U3MWVmZjVjNmQxNCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjM4NDQwNTg5fQ.fS4dmvI0bupn5F6_Pgwcbxf8BK80ELTZ40OnJY4OAFA

@@ -1,0 +1,45 @@
+### Get All 
+
+GET http://localhost:4000/api/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0YjA1NjdkNTkwN2VmYjExYjM0YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYzOTAzNTM0NX0.wJFKOStT80Pe41y-IYQBqVWsYsx3UInuNof0Y30xVgs
+
+### get by ID
+
+GET http://localhost:4000/api/user/61a5468e48c0c676cdb5ced3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0YjA1NjdkNTkwN2VmYjExYjM0YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYzOTAzNTM0NX0.wJFKOStT80Pe41y-IYQBqVWsYsx3UInuNof0Y30xVgs
+
+### add one
+
+POST http://localhost:4000/api/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0YjA1NjdkNTkwN2VmYjExYjM0YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYzOTAzMjMzNX0.4QOWerdDU4rAlcyufcThgPTyxcN82J0_8DYMaa50VFI
+content-type: application/json
+
+{
+    "email": "aroamadou1@gmail.com",
+    "lastname": "Aro",
+    "firstname":  "AMADOU", 
+    "password": "azertyui" 
+}
+
+### update info by id or by token
+
+
+PATCH http://localhost:4000/api/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0YjA1NjdkNTkwN2VmYjExYjM0YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYzOTAzMjMzNX0.4QOWerdDU4rAlcyufcThgPTyxcN82J0_8DYMaa50VFI
+content-type: application/json
+
+{
+    "id": "61a4b5a70bff1a4c74941f18",
+    "lastname": "Arouna",
+    "firstname":  "AMADOU" 
+}
+
+### delete or sofdelete by id
+
+DELETE http://localhost:4000/api/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTY0YjA1NjdkNTkwN2VmYjExYjM0YyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYzOTAzMjMzNX0.4QOWerdDU4rAlcyufcThgPTyxcN82J0_8DYMaa50VFI
+content-type: application/json
+
+{
+    "id": "61a5f2d8a3642efc07eccfd5"
+}
